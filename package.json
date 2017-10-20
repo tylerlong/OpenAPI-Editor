@@ -1,0 +1,61 @@
+{
+  "name": "openapi-editor",
+  "version": "0.1.0",
+  "private": true,
+  "description": "A desktop editor for OpenAPI 3.0 documents.",
+  "main": "build/electron.bundle.js",
+  "scripts": {
+    "upgrade": "yarn-upgrade-all",
+    "dev": "node -r babel-register node_modules/.bin/webpack-dev-server",
+    "build": "node -r babel-register node_modules/.bin/webpack --progress --colors",
+    "build:watch": "yarn build --watch",
+    "release": "yarn build -p",
+    "test": "standard && jest",
+    "test:watch": "yarn test --watch",
+    "prepush": "yarn test",
+    "start": "electron .",
+    "dist": "rm -rf dist && electron-builder build"
+  },
+  "repository": "git@github.com:tylerlong/OpenAPI-Editor.git",
+  "author": {
+    "name": "Tyler Long",
+    "email": "tyler4long@gmail.com"
+  },
+  "license": "MIT",
+  "jest": {
+    "setupFiles": [
+      "./test/shim.js",
+      "./test/setup.js"
+    ]
+  },
+  "build": {
+    "appId": "openapi-editor.ringcentral.com",
+    "name": "OpenAPI Editor",
+    "files": [
+      "build/index.html",
+      "build/electron.bundle.js",
+      "build/preload.bundle.js",
+      "build/index.bundle.js",
+      "build/index.bundle.css",
+      "!node_modules${/*}"
+    ],
+    "mac": {
+      "category": "public.app-category.productivity"
+    },
+    "dmg": {
+      "contents": [
+        {
+          "x": 128,
+          "y": 160
+        },
+        {
+          "x": 384,
+          "y": 160,
+          "type": "link",
+          "path": "/Applications"
+        }
+      ]
+    },
+    "compression": "maximum"
+  }
+}
