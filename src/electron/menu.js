@@ -1,4 +1,7 @@
-const { app, Menu, shell } = require('electron')
+import { app, Menu, shell } from 'electron'
+import pkg from '../../package.json'
+
+const productName = pkg.build.productName
 
 const template = [
   {
@@ -53,15 +56,15 @@ if (process.platform === 'darwin') {
   template.unshift({
     label: app.getName(),
     submenu: [
-      { role: 'about' },
+      { role: 'about', label: `About ${productName}` },
       { type: 'separator' },
       { role: 'services', submenu: [] },
       { type: 'separator' },
-      { role: 'hide' },
+      { role: 'hide', label: `Hide ${productName}` },
       { role: 'hideothers' },
       { role: 'unhide' },
       { type: 'separator' },
-      { role: 'quit' }
+      { role: 'quit', label: `Quit ${productName}` }
     ]
   })
 
@@ -89,10 +92,6 @@ if (process.platform === 'darwin') {
 
 const menu = Menu.buildFromTemplate(template)
 
-const setApplicationMenu = () => {
+export const setApplicationMenu = () => {
   Menu.setApplicationMenu(menu)
-}
-
-module.exports = {
-  setApplicationMenu
 }

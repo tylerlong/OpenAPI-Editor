@@ -30,7 +30,7 @@
   },
   "build": {
     "appId": "openapi-editor.tylingsoft.com",
-    "name": "OpenAPI Editor",
+    "productName": "OpenAPI Editor",
     "files": [
       "build/index.html",
       "build/electron.bundle.js",
