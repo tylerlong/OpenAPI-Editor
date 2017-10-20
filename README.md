@@ -46,3 +46,4 @@ Go to GitHub and release it.
 ## todo list
 
 - Setup `package.json`
+- Get rid of `require`
