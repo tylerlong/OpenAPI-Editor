@@ -44,3 +44,5 @@ Go to GitHub and release it.
 
 
 ## todo list
+
+- Get a new icon
