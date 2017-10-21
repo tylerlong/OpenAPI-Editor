@@ -4,8 +4,8 @@ import { render } from 'react-dom'
 import './index.css'
 
 import App from './components/App'
-import Document from './models/Document'
+import Doc from './models/Doc'
 
-const doc = Document.create()
+const doc = Doc.create()
 
-render(<App document={doc} />, document.getElementById('root'))
+render(<App doc={doc} />, document.getElementById('root'))
