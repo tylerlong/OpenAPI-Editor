@@ -5,6 +5,8 @@
 
 A desktop editor for OpenAPI 3.0 documents.
 
+This is the [OpenAPI Specification](https://github.com/OAI/OpenAPI-Specification/blob/v3.0.1/versions/3.0.1.md) referenced.
+
 
 ## Setup
 
