@@ -1,5 +1,5 @@
 import React from 'react'
-import { render } from 'react-dom'
+import ReactDOM from 'react-dom'
 
 import './index.css'
 
@@ -8,4 +8,4 @@ import Doc from './models/Doc'
 
 const doc = Doc.create()
 
-render(<App doc={doc} />, document.getElementById('root'))
+ReactDOM.render(<App doc={doc} />, document.getElementById('root'))

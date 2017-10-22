@@ -48,3 +48,5 @@ Go to GitHub and release it.
 ## todo list
 
 - Get a new icon
+- Write tests
+- Setup Travis and coveralls
