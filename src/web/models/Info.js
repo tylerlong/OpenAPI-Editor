@@ -12,6 +12,9 @@ const Info = types.model({
   version: ''
 }).actions(self => ({
   update (key, value) {
+    if (self[key] === undefined) {
+      throw new Error(`Unknown key '${key}'`)
+    }
     self[key] = value
   }
 }))
