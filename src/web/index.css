@@ -1,3 +1,11 @@
 html, body {
   padding: 16px;
 }
+
+.ant-tabs-tab {
+  text-transform: capitalize;
+}
+
+.ant-form-item-label {
+  text-transform: capitalize;
+}
