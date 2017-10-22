@@ -6,21 +6,18 @@ import './index.css'
 import App from './components/App'
 import OpenAPI from './models/OpenAPI'
 
-const openapi = OpenAPI.create({
+const openAPI = OpenAPI.create({
   openapi: '3.0.0',
   info: {
-    id: 'info',
-    title: '',
+    title: 'RingCentral API',
     description: '',
     termsOfService: '',
     contact: {
-      id: 'contact'
     },
     license: {
-      id: 'license'
     },
-    version: ''
+    version: 'v1.0'
   }
 })
 
-ReactDOM.render(<App openapi={openapi} />, document.getElementById('root'))
+ReactDOM.render(<App openAPI={openAPI} />, document.getElementById('root'))

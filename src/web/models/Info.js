@@ -4,12 +4,11 @@ import Contact from './Contact'
 import License from './License'
 
 const Info = types.model({
-  id: types.identifier(types.string),
   title: '',
   description: '',
   termsOfService: '',
-  contact: types.reference(Contact),
-  license: types.reference(License),
+  contact: Contact,
+  license: License,
   version: ''
 }).actions(self => ({
   update (key, value) {

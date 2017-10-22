@@ -4,7 +4,7 @@ import Info from './Info'
 
 const OpenAPI = types.model({
   openapi: '3.0.0',
-  info: types.reference(Info)
+  info: Info
 }).actions(self => ({
   update (key, value) {
     self[key] = value
