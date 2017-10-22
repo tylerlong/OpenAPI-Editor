@@ -4,8 +4,23 @@ import ReactDOM from 'react-dom'
 import './index.css'
 
 import App from './components/App'
-import Doc from './models/Doc'
+import OpenAPI from './models/OpenAPI'
 
-const doc = Doc.create()
+const openapi = OpenAPI.create({
+  openapi: '3.0.0',
+  info: {
+    id: 'info',
+    title: '',
+    description: '',
+    termsOfService: '',
+    contact: {
+      id: 'contact'
+    },
+    license: {
+      id: 'license'
+    },
+    version: ''
+  }
+})
 
-ReactDOM.render(<App doc={doc} />, document.getElementById('root'))
+ReactDOM.render(<App openapi={openapi} />, document.getElementById('root'))
