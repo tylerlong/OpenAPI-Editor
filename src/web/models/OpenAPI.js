@@ -6,10 +6,10 @@ import ExternalDocs from './ExternalDocs'
 import { update } from '../utils'
 
 const OpenAPI = types.model({
-  openapi: '3.0.0',
+  openapi: types.string,
   info: Info,
-  tags: types.array(Tag),
-  externalDocs: ExternalDocs
+  tags: types.maybe(types.array(Tag)),
+  externalDocs: types.maybe(ExternalDocs)
 }).actions(self => ({
   update: update(self)
 }))

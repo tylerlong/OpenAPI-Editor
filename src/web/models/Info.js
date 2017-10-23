@@ -5,12 +5,12 @@ import License from './License'
 import { update } from '../utils'
 
 const Info = types.model({
-  title: '',
-  description: '',
-  termsOfService: '',
-  contact: Contact,
-  license: License,
-  version: ''
+  title: types.string,
+  description: types.maybe(types.string),
+  termsOfService: types.maybe(types.string),
+  contact: types.maybe(Contact),
+  license: types.maybe(License),
+  version: types.string
 }).actions(self => ({
   update: update(self)
 }))

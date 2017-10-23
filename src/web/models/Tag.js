@@ -4,8 +4,8 @@ import { update } from '../utils'
 import ExternalDocs from './ExternalDocs'
 
 const Tag = types.model({
-  name: '',
-  description: '',
+  name: types.string,
+  description: types.maybe(types.string),
   externalDocs: types.maybe(ExternalDocs)
 }).actions(self => ({
   update: update(self)
