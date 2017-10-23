@@ -1,3 +1,41 @@
+export const defaultValue = {
+  openapi: '3.0.1',
+  info: {
+    title: '',
+    description: '',
+    termsOfService: '',
+    contact: {
+      name: '',
+      url: '',
+      email: ''
+    },
+    license: {
+      name: '',
+      url: ''
+    },
+    version: ''
+  },
+  servers: [],
+  paths: {},
+  components: {
+    schemas: {},
+    responses: {},
+    parameters: {},
+    examples: {},
+    requestBodies: {},
+    headers: {},
+    securitySchemes: {},
+    links: {},
+    callbacks: {}
+  },
+  security: [],
+  tags: [],
+  externalDocs: {
+    description: '',
+    url: ''
+  }
+}
+
 export const dataTypes = {
   integer: ['int32', 'int64'],
   number: ['float', 'double'],
