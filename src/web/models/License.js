@@ -1,15 +1,12 @@
 import { types } from 'mobx-state-tree'
 
+import { update } from '../utils'
+
 const License = types.model({
   name: '',
   url: ''
 }).actions(self => ({
-  update (key, value) {
-    if (self[key] === undefined) {
-      throw new Error(`Unknown key '${key}'`)
-    }
-    self[key] = value
-  }
+  update: update(self)
 }))
 
 export default License

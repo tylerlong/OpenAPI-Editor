@@ -4,3 +4,12 @@ export const dataTypes = {
   boolean: [],
   string: ['', 'byte', 'binary', 'date', 'date-time', 'password']
 }
+
+export const update = self => {
+  return (key, value) => {
+    if (self[key] === undefined) {
+      throw new Error(`Unknown key '${key}'`)
+    }
+    self[key] = value
+  }
+}

@@ -2,6 +2,7 @@ import { types } from 'mobx-state-tree'
 
 import Contact from './Contact'
 import License from './License'
+import { update } from '../utils'
 
 const Info = types.model({
   title: '',
@@ -11,12 +12,7 @@ const Info = types.model({
   license: License,
   version: ''
 }).actions(self => ({
-  update (key, value) {
-    if (self[key] === undefined) {
-      throw new Error(`Unknown key '${key}'`)
-    }
-    self[key] = value
-  }
+  update: update(self)
 }))
 
 export default Info

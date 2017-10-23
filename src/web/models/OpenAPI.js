@@ -1,17 +1,13 @@
 import { types } from 'mobx-state-tree'
 
 import Info from './Info'
+import { update } from '../utils'
 
 const OpenAPI = types.model({
   openapi: '3.0.0',
   info: Info
 }).actions(self => ({
-  update (key, value) {
-    if (self[key] === undefined) {
-      throw new Error(`Unknown key '${key}'`)
-    }
-    self[key] = value
-  }
+  update: update(self)
 }))
 
 export default OpenAPI

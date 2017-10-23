@@ -1,16 +1,13 @@
 import { types } from 'mobx-state-tree'
 
+import { update } from '../utils'
+
 const Contact = types.model({
   name: '',
   url: '',
   email: ''
 }).actions(self => ({
-  update (key, value) {
-    if (self[key] === undefined) {
-      throw new Error(`Unknown key '${key}'`)
-    }
-    self[key] = value
-  }
+  update: update(self)
 }))
 
 export default Contact
