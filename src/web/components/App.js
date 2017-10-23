@@ -4,6 +4,7 @@ import { observer } from 'mobx-react'
 
 import FormItem from './FormItem'
 import Info from './Info'
+import ExternalDocs from './ExternalDocs'
 
 class App extends React.Component {
   render () {
@@ -34,7 +35,7 @@ class App extends React.Component {
             tags
           </Tabs.TabPane>
           <Tabs.TabPane tab='externalDocs' key='externalDocs'>
-            externalDocs
+            <ExternalDocs externalDocs={openAPI.externalDocs} />
           </Tabs.TabPane>
         </Tabs>
       </div>
