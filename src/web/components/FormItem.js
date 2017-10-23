@@ -15,6 +15,7 @@ const formItemLayout = {
 
 class FormItem extends React.Component {
   render () {
+    console.log('render FormItem')
     const { label, children } = this.props
     return (
       <Form.Item {...formItemLayout} label={label}>

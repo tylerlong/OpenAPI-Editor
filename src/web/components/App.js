@@ -4,6 +4,7 @@ import { observer } from 'mobx-react'
 
 import FormItem from './FormItem'
 import Info from './Info'
+import Tags from './Tags'
 import ExternalDocs from './ExternalDocs'
 
 class App extends React.Component {
@@ -15,7 +16,7 @@ class App extends React.Component {
         <FormItem label='OpenAPI specification version'>
           <Input value={openAPI.openapi} onChange={e => openAPI.update('openapi', e.target.value)} />
         </FormItem>
-        <Tabs tabPosition='left' defaultActiveKey='info'>
+        <Tabs tabPosition='left' defaultActiveKey='tags'>
           <Tabs.TabPane tab='info' key='info'>
             <Info info={openAPI.info} />
           </Tabs.TabPane>
@@ -32,7 +33,7 @@ class App extends React.Component {
             security
           </Tabs.TabPane>
           <Tabs.TabPane tab='tags' key='tags'>
-            tags
+            <Tags tags={openAPI.tags} />
           </Tabs.TabPane>
           <Tabs.TabPane tab='externalDocs' key='externalDocs'>
             <ExternalDocs externalDocs={openAPI.externalDocs} />

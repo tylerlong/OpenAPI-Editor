@@ -29,7 +29,16 @@ export const defaultValue = {
     callbacks: {}
   },
   security: [],
-  tags: [],
+  tags: [
+    {
+      name: 'name1',
+      description: 'description1'
+    },
+    {
+      name: 'name2',
+      description: 'description2'
+    }
+  ],
   externalDocs: {
     description: '',
     url: ''
